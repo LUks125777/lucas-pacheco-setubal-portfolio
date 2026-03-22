@@ -1,0 +1,225 @@
+/* =========================================
+   CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   ========================================= */
+:root {
+    --cor-primaria: #2c3e50;
+    --cor-secundaria: #f39c12; 
+    --cor-fundo: #f8f9fa;
+    --cor-texto: #333;
+    --cor-rodape: #1a252f;
+}
+
+body.dark-mode {
+    --cor-fundo: #121212;
+    --cor-texto: #e0e0e0;
+    --cor-primaria: #1f2a36;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+/* =========================================
+   CABEÇALHO E NAVEGAÇÃO
+   ========================================= */
+header {
+    background-color: var(--cor-primaria);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Estilo específico para o nome 'Lucas Pacheco' no topo */
+.logo {
+    color: white; 
+    font-size: 1.5em; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav a:hover, nav a.active {
+    background-color: var(--cor-secundaria);
+}
+
+#theme-toggle {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* =========================================
+   PÁGINA SOBRE MIM - GRID DE CAIXAS
+   ========================================= */
+main {
+    flex: 1; 
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.grid-sobre {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.caixa-tema {
+    position: relative;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.caixa-tema:hover {
+    transform: translateY(-10px); /* Efeito de pular ao passar o mouse */
+}
+
+/* Camada escura sobre as imagens para o texto aparecer */
+.caixa-tema::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2));
+    z-index: 1;
+}
+
+.conteudo-caixa {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    color: white;
+}
+
+.conteudo-caixa h3 {
+    color: var(--cor-secundaria);
+    margin-bottom: 5px;
+}
+
+/* Configuração dos Fundos */
+.bg-localizacao { background: url('piauiCertao.jpg') center/cover; }
+.bg-profissao { background: url('ibge.jpg') center/cover; }
+.bg-academica { background: url('imagemFormacao_1.jpg') center/cover; }
+.bg-linguagens { background: url('ImagemPortfolio.jpg') center/cover; }
+.bg-apresentacao { background: url('ImagemPortfolio_2.jpeg') center/cover; }
+.bg-hobbies { background: url('fut.jpg') center/cover; }
+
+/* =========================================
+   FORMULÁRIO DE CONTATO E MODAL
+   ========================================= */
+.form-contato {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--cor-primaria);
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-enviar {
+    background: var(--cor-secundaria);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+/* Caixa Modal (Oculta por padrão) */
+.modal {
+    display: none; 
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-conteudo {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    color: #333;
+}
+
+.modal-conteudo button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: var(--cor-primaria);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* =========================================
+   RODAPÉ EM DESTAQUE
+   ========================================= */
+.rodape-destaque {
+    background-color: var(--cor-rodape);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-top: 4px solid var(--cor-secundaria);
+}

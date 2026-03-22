@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Pacheco - Contato</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('imagemContato.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        main h1 { color: white; text-align: center; margin-bottom: 20px;}
+    </style>
+</head>
+<body>
+
+    <script>
+        if (localStorage.getItem('meuTema') === 'escuro') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>    
+
+    <header>
+        <div class="logo">Lucas Pacheco</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Sobre mim</a></li>
+                <li><a href="formacao.html">Formação</a></li>
+                <li><a href="portfolio.html">Portfólio</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle">🌙 Modo Escuro</button>
+    </header>
+
+    <main>
+        <h1>Vamos Conversar?</h1>
+        
+        <form id="contactForm" class="form-contato">
+            <div class="form-group">
+                <label for="nome">Nome Completo (Sem números):</label>
+                <input type="text" id="nome" placeholder="Digite seu nome">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" placeholder="exemplo@dominio.com">
+            </div>
+
+            <div class="form-group">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+        </form>
+
+        <div id="modalSucesso" class="modal">
+            <div class="modal-conteudo">
+                <h2>✅ Sucesso!</h2>
+                <p>Sua mensagem foi validada e simulada com sucesso.</p>
+                <button id="fecharModal">Fechar</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape-destaque">
+        <p>Todos os direitos reservados - Lucas Pacheco</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Pacheco - Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para os cartões de portfólio */
+        .grid-portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .cartao-projeto {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            color: #333;
+        }
+        .cartao-projeto img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .info-projeto {
+            padding: 20px;
+        }
+        body.dark-mode .cartao-projeto {
+            background: var(--cor-primaria);
+            color: white;
+        }
+        
+        /* =========================================
+           ESTILO DOS BOTÕES DE PROJETO
+           ========================================= */
+        .btn-projeto {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #333; /* Cor do botão no modo claro */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-projeto:hover {
+            background-color: #555; 
+        }
+
+        /* Cor do botão quando o Modo Escuro está ativado */
+        body.dark-mode .btn-projeto {
+            background-color: white;
+            color: var(--cor-primaria);
+        }
+
+        body.dark-mode .btn-projeto:hover {
+            background-color: #ddd;
+        }
+
+    </style>
+</head>
+<body>
+
+    <script>
+        if (localStorage.getItem('meuTema') === 'escuro') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+
+    <header>
+        <div class="logo">Lucas Pacheco</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Sobre mim</a></li>
+                <li><a href="formacao.html">Formação</a></li>
+                <li><a href="portfolio.html" class="active">Portfólio</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle">🌙 Modo Escuro</button>
+    </header>
+
+   <main>
+        <h1>Meus Projetos</h1>
+        <p style="text-align: center; margin-top: 10px;">Confira alguns dos trabalhos e aplicações que venho desenvolvendo.</p>
+        
+        <div class="grid-portfolio">
+            
+            <div class="cartao-projeto">
+                <img src="ImagemPortfolio.jpg" alt="Projeto FDS Web">
+                <div class="info-projeto">
+                    <h3>Criação de um Site Web</h3>
+                    <p>Este é um trabalho para colocar em prática conceitos básicos da matéria Fundamentos de Desenvolvimento de Software (Uninter). Objetivos: Desenvolver uma página simples utilizando HTML, CSS e JavaScript e disponibilizar via GitHub.</p>
+                    <a href="https://luks125777.github.io/fds.uninter/" target="_blank" class="btn-projeto">Acessar Projeto</a>
+                </div>
+            </div>
+
+            <div class="cartao-projeto">
+                <img src="ImagemPortfolio_2.jpeg" alt="Primeiro contato CSS/HTML/JS">
+                <div class="info-projeto">
+                    <h3>Primeiro Contato Web</h3>
+                    <p>Este pequeno trabalho é o primeiro passo para conhecer os comandos e funções do CSS, JavaScript e HTML. Conhecimentos adquiridos na matéria Fundamentos de Desenvolvimento de Software (Uninter).</p>
+                    <a href="https://luks125777.github.io/Index.html/" target="_blank" class="btn-projeto">Acessar Projeto</a>
+                </div>
+            </div>
+
+            <div class="cartao-projeto">
+                <img src="ImagemPortfolio_3.jpg" alt="Projeto Linguagem C">
+                <div class="info-projeto">
+                    <h3>Algoritmos em Linguagem C</h3>
+                    <p>Este é um trabalho para colocar em prática conceitos básicos da matéria Algoritmos & Programação - Linguagem C (IFPI). Foco total em Estrutura Sequencial e lógica de programação.</p>
+                    <a href="https://github.com/LUks125777/linguagem-c-Lista-01-Estrutura-Seguencial-" target="_blank" class="btn-projeto">Acessar Repositório</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="rodape-destaque">
+        <p>Todos os direitos reservados - Lucas Pacheco</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

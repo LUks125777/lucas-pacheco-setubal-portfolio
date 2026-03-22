@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Pacheco - Sobre Mim</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <script>
+        if (localStorage.getItem('meuTema') === 'escuro') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+
+    <header>
+        <div class="logo">Lucas Pacheco</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Sobre mim</a></li>
+                <li><a href="formacao.html">Formação</a></li>
+                <li><a href="portfolio.html">Portfólio</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle">🌙 Modo Escuro</button>
+    </header>
+
+    <main>
+        <h1>Conheça um pouco sobre mim</h1>
+        
+        <div class="grid-sobre">
+            <div class="caixa-tema bg-localizacao">
+                <div class="conteudo-caixa">
+                    <h3>📍 Localização</h3>
+                    <p>Corrente, Estado do Piauí - Brasil</p>
+                </div>
+            </div>
+
+            <div class="caixa-tema bg-profissao">
+                <div class="conteudo-caixa">
+                    <h3>💼 Profissão Atual</h3>
+                    <p>Agente de pesquisa e mapeamento no IBGE.</p>
+                </div>
+            </div>
+
+            <div class="caixa-tema bg-academica">
+                <div class="conteudo-caixa">
+                    <h3>🎓 Ocupação Acadêmica</h3>
+                    <p>Cursando Análise e Desenvolvimento de Sistemas (Módulo 3) - Uninter.</p>
+                </div>
+            </div>
+
+            <div class="caixa-tema bg-linguagens">
+                <div class="conteudo-caixa">
+                    <h3>💻 Linguagens Iniciais</h3>
+                    <p>Experiência com lógica em C, Java e Python.</p>
+                </div>
+            </div>
+
+            <div class="caixa-tema bg-apresentacao">
+                <div class="conteudo-caixa">
+                    <h3>👋 Apresentação</h3>
+                    <p>Em transição de carreira, motivado pelo aprendizado contínuo para aplicar lógica em projetos reais de software.</p>
+                </div>
+            </div>
+
+            <div class="caixa-tema bg-hobbies">
+                <div class="conteudo-caixa">
+                    <h3>⚽ Hobbies</h3>
+                    <p>Nas horas vagas, gosto de ler livros e assistir a um bom jogo de futebol.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape-destaque">
+        <p>Todos os direitos reservados - Lucas Pacheco</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
